@@ -118,7 +118,6 @@ function CreateCabinForm({ cabinToUpdate = {}, onCloseModal }) {
         error={errors?.description?.message}
       >
         <Textarea
-          type="number"
           id="description"
           disabled={isWorking}
           defaultValue=""
