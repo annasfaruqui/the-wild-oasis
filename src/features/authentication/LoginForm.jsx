@@ -7,11 +7,10 @@ import FormRowVertical from "../../ui/FormRowVertical";
 import SpinnerMini from "../../ui/SpinnerMini";
 
 import { useLogin } from "./useLogin";
-import DemoUser from "../../ui/DemoUser";
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("demo@wildoasis.com");
+  const [password, setPassword] = useState("demouser");
   const { login, isLoading } = useLogin();
 
   function handleSubmit(e) {
@@ -53,9 +52,7 @@ function LoginForm() {
           disabled={isLoading}
         />
       </FormRowVertical>
-      <FormRowVertical>
-        <DemoUser />
-      </FormRowVertical>
+
       <FormRowVertical>
         <Button size="large" disabled={isLoading}>
           {!isLoading ? "Login" : <SpinnerMini />}
