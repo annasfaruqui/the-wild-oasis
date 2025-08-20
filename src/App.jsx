@@ -1,26 +1,26 @@
-import { Suspense, lazy } from "react";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 import GlobalStyles from "./styles/GlobalStyles";
 
-import ProtectedRoute from "./ui/ProtectedRoute";
-import AppLayout from "./ui/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
+import AppLayout from "./ui/AppLayout";
+import ProtectedRoute from "./ui/ProtectedRoute";
 import SpinnerFullPage from "./ui/SpinnerFullPage";
 
-const Dashboard = lazy(() => import("./pages/Dashboard"));
-const Bookings = lazy(() => import("./pages/Bookings"));
-const Cabins = lazy(() => import("./pages/Cabins"));
-const Users = lazy(() => import("./pages/Users"));
-const Settings = lazy(() => import("./pages/Settings"));
-const Account = lazy(() => import("./pages/Account"));
-const Login = lazy(() => import("./pages/Login"));
-const Booking = lazy(() => import("./pages/Booking"));
-const Checkin = lazy(() => import("./pages/Checkin"));
+import Account from "./pages/Account";
+import Booking from "./pages/Booking";
+import Bookings from "./pages/Bookings";
+import Cabins from "./pages/Cabins";
+import Checkin from "./pages/Checkin";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import Settings from "./pages/Settings";
+import Users from "./pages/Users";
 
 // Used to set up Cache behind the scenes
 const queryClient = new QueryClient({
